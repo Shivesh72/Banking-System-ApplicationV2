@@ -37,6 +37,7 @@ public class TransactionTests {
 		transaction.setAmount(20000);
 		transaction.setType(2); //1 for deposit 2 for withdrawal 3 for transfer
 		
+		//saving the transaction in DB
 		Transaction savedTransaction = repo.save(transaction);
 		Transaction existTransaction = entityManager.find(Transaction.class, savedTransaction.getTrans_id());
 		assertThat(existTransaction.getAccount_id()).isEqualTo(transaction.getAccount_id());
