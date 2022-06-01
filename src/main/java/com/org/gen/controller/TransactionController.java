@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.org.gen.models.Transaction;
 import com.org.gen.repo.TransactionRepository;
 
-@RestController("/")
+//@RestController("/")
 public class TransactionController {
 	
 	@Autowired

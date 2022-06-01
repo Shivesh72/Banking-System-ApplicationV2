@@ -1,10 +1,13 @@
 package com.org.gen.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.ForeignKey;
 
 @Entity
 @Table(name = "Customer")
@@ -13,11 +16,23 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int cust_ID;
+	
+	@Column(nullable = false,length = 30)
 	private String name;
+	
+
+	@Column(nullable = false,length = 10)
 	private String password;
+	
+	@Column(nullable = false,length = 10)
 	private String mobileNumber;
+	
+	@Column(nullable = false,length = 30)
 	private String email;
+
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int account_ID;
+	
 	public int getCust_ID() {
 		return cust_ID;
 	}
