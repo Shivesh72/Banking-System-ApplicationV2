@@ -30,7 +30,7 @@ public class TransactionTests {
 	
 	@Test
 	public void testCreateTransaction() {
-	//this function helps in testing my transaction api
+	//this function helps in testing my transaction model
 		Transaction transaction = new Transaction();
 		transaction.setAccount_id(123);
 //		transaction.setTrans_id(1002);
