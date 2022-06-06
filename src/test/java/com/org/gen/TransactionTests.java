@@ -1,7 +1,6 @@
 package com.org.gen;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -31,6 +30,7 @@ public class TransactionTests {
 	
 	@Test
 	public void testCreateTransaction() {
+	//this function helps in testing my transaction model
 		Transaction transaction = new Transaction();
 		transaction.setAccount_id(123);
 //		transaction.setTrans_id(1002);
