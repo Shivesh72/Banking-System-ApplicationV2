@@ -21,7 +21,7 @@ public class Customer {
 	private String name;
 	
 
-	@Column(nullable = false,length = 10)
+	@Column(nullable = false,length=64)
 	private String password;
 	
 	@Column(nullable = false,length = 10)
@@ -33,6 +33,15 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int account_ID;
 	
+	@Column(nullable = false,length=10)
+	private String status;
+	
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public int getCust_ID() {
 		return cust_ID;
 	}
@@ -69,7 +78,9 @@ public class Customer {
 	public void setAccount_ID(int account_ID) {
 		this.account_ID = account_ID;
 	}
-	public Customer(int cust_ID, String name, String password, String mobileNumber, String email, int account_ID) {
+	
+	public Customer(int cust_ID, String name, String password, String mobileNumber, String email, int account_ID,
+			String status) {
 		super();
 		this.cust_ID = cust_ID;
 		this.name = name;
@@ -77,6 +88,7 @@ public class Customer {
 		this.mobileNumber = mobileNumber;
 		this.email = email;
 		this.account_ID = account_ID;
+		this.status = status;
 	}
 	public Customer() {
 		super();

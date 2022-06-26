@@ -31,6 +31,7 @@ public class CustomerController {
 		customer.setMobileNumber("998877665544");
 		customer.setName("John");
 		customer.setPassword("12345#");
+		customer.setStatus("pending");
 		
 		Customer temp =  this.customerService.CreateCustomer(customer);
 		System.out.println(temp.getEmail());
@@ -57,6 +58,7 @@ public class CustomerController {
 		BCryptPasswordEncoder encoder=new BCryptPasswordEncoder();
 		String encodedPassword=  encoder.encode(cust.getPassword());
 		cust.setPassword(encodedPassword);
+		cust.setStatus("pending");
 		repo.save(cust);
 		return "registration_success";
 	}
@@ -64,7 +66,7 @@ public class CustomerController {
 	@GetMapping("/list_customers")
 	public String viewUsersList(Model model) {
 		List<Customer> listCustomers = repo.findAll();
-		model.addAttribute("listCustomer", listCustomers);
+		model.addAttribute("listCustomers", listCustomers);
 		return "customers";
 	}
 }
