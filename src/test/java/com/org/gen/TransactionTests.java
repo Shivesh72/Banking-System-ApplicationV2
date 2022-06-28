@@ -46,7 +46,6 @@ public class TransactionTests {
 	@Test
 	public void testCustomer() {
 		Customer customer= new Customer();
-		customer.setAccount_ID(120);
 		customer.setEmail("shiv@gmail.com");
 		customer.setMobileNumber("9977665532");
 		customer.setName("Shiv");
@@ -56,6 +55,6 @@ public class TransactionTests {
 		customer.setStatus("pending");
 		Customer savedCustomer= cRepository.save(customer);
 		
-		Customer find = entityManager.find(Customer.class, savedCustomer.getAccount_ID());
+		Customer find = entityManager.find(Customer.class, savedCustomer.getCust_ID());
 	}
 }
