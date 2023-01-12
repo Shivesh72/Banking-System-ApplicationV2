@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import com.org.gen.models.Customer;
 
 
-public interface CustomerRepository extends JpaRepository<Customer,Integer> {
+public interface CustomerRepository extends JpaRepository<Customer,Long> {
 
 	@Query("SELECT u FROM Customer u WHERE u.email = ?1")
 	Customer findByEmail(String email);

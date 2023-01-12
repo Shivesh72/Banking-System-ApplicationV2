@@ -19,7 +19,7 @@ public class CustomCustomerDetailsService implements UserDetailsService {
 		// TODO Auto-generated method stub
 		Customer cust = repo.findByEmail(email);
 		if(cust==null) {
-			throw new UsernameNotFoundException("User not found");
+			throw new UsernameNotFoundException("Employee not found");
 		}
 		
 		return new CustomCustomerDetails(cust);
