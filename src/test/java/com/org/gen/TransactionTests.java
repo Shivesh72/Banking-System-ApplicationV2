@@ -1,6 +1,9 @@
 package com.org.gen;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -55,6 +58,8 @@ public class TransactionTests {
 		customer.setStatus("pending");
 		Customer savedCustomer= cRepository.save(customer);
 		
-		Customer find = entityManager.find(Customer.class, savedCustomer.getCust_ID());
-	}
+		Customer find = entityManager.find(Customer.class, savedCustomer.getEmp_ID());
+		List<Customer> list=(List<Customer>)cRepository.findAll();
+		System.out.print(list);	
+		}
 }

@@ -10,12 +10,12 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ForeignKey;
 
 @Entity
-@Table(name = "Customer")
+@Table(name = "Employee")
 public class Customer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int cust_ID;
+	private int emp_ID;
 	
 	@Column(nullable = false,length = 30)
 	private String name;
@@ -39,11 +39,11 @@ public class Customer {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public int getCust_ID() {
-		return cust_ID;
+	public int getEmp_ID() {
+		return emp_ID;
 	}
-	public void setCust_ID(int cust_ID) {
-		this.cust_ID = cust_ID;
+	public void setEmp_ID(int emp_ID) {
+		this.emp_ID = emp_ID;
 	}
 	public String getName() {
 		return name;
@@ -70,14 +70,15 @@ public class Customer {
 		this.email = email;
 	}
 	
-	public Customer(int cust_ID, String name, String password, String mobileNumber, String email,
+	public Customer(int emp_ID, String name, String password, String mobileNumber, String email,
 			String status) {
 		super();
-		this.cust_ID = cust_ID;
+		this.emp_ID = emp_ID;
 		this.name = name;
 		this.password = password;
 		this.mobileNumber = mobileNumber;
 		this.email = email;
+		
 		this.status = status;
 	}
 	public Customer() {

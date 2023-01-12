@@ -1,6 +1,8 @@
 package com.org.gen.services;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,11 @@ public class CustomerService  {
 		
 		return tempCust;
 		
+	}
+	public List<Customer> showCustomer()
+	{
+		List<Customer> list=(List<Customer>)customerRepository.findAll();
+		return list;
 	}
 	
 	
